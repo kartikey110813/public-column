@@ -1,0 +1,60 @@
+*{
+    margin:0;
+}
+.app__header{
+    object-fit: contain;
+    padding: 20px;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #fdf497;
+}
+.App{
+    background: url(https://images.unsplash.com/photo-1554050857-c84a8abdb5e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1164&q=80);
+    
+}
+.app__headerImage{
+    object-fit: contain;
+    width: 15%;
+    font-weight: bold;
+    font-family: blackadder ITC ; 
+}
+
+.app__signUp{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.app__posts{
+    padding: 20px;
+    /* margin-left: 500px; */
+    display: flex;
+    justify-content: center;
+}
+.app__postsRight{
+    margin-left: 35px;
+}
+.app__info{
+    margin: 10px;
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+    background-color: transparent;
+}
+
+#div {
+    background: radial-gradient(circle at 90% 150%, #fdf497 0%, #fdf497 5%, lightcoral 45%,lightpink 60%,rgb(101, 193, 255) 90%);
+}
+
+.app__header button{
+    background-color: rgb(247, 103, 0);
+    margin: 5px;
+}
+.app__info h3{
+    background-color: lightgreen;
+    width: 100%;
+}
