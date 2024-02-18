@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component} from 'react'
+import React, { useState, useEffect} from 'react'
 import './Post.css'
 import Avatar from '@material-ui/core/Avatar'
 import { db } from './firebase'
@@ -9,7 +9,7 @@ import Likes from './Likes'
 
 function Post({ postId, user, username, imageUrl, caption}) {
     const [comments, setComments] = useState([])
-    const [comment, setComment] = useState('')
+    const [comment, setComment] = useState('');
    
  
 
@@ -23,7 +23,11 @@ function Post({ postId, user, username, imageUrl, caption}) {
                 .collection('comments')
                 .orderBy('timestamp', 'asc')
                 .onSnapshot((snapshot) => {
-                    setComments(snapshot.docs.map((doc) => doc.data()))
+                    setComments(snapshot.docs.map((doc) => ({
+                        com:doc.data(),
+                        id:doc.id
+                    })
+                    ))
                     console.log(comments)
                 })
         }
@@ -61,17 +65,15 @@ function Post({ postId, user, username, imageUrl, caption}) {
             <img className="post__image" src={imageUrl} alt="" />
             
     {/* For like and unlike functionality */}
-    {user && (
+    
         <Likes/>
-
-    )}
 
             <h4 className="post__text"> <strong>{username.username}</strong> {caption}</h4>
 
            {user && (
             <div className="post__comments">
-            {comments.map((comment)=>(
-                <p>
+            {comments.map((comment,id)=>(
+                <p key={id}>
                     <strong>{comment.username}</strong> {comment.text}
                 </p>
             ))}

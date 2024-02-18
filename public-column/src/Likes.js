@@ -86,7 +86,7 @@ class App extends Component {
             {/*LIKE BUTTON: generic button function component with label and counter is passed relevant props for like functionality*/}
               <ButtonWithLabelAndCounter
                 
-                buttonLabel="❤️"
+                buttonLabel="👍"
                 countValue={this.state.likeCount}
                 className="like-button"
                 clickedClass="liked"
@@ -96,7 +96,7 @@ class App extends Component {
               <span></span>
             {/*DISLIKE BUTTON: generic button function component with label and counter is passed relevant props for dislike and dislike functionality*/}
               <ButtonWithLabelAndCounter
-                buttonLabel="💔"
+                buttonLabel="👎"
                 countValue={this.state.dislikeCount}
                 className="dislike-button"
                 clickedClass="disliked"

@@ -11,7 +11,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Modal from '@material-ui/core/Modal'
 import { Button, Input } from '@material-ui/core'
 
-import InstagramEmbed from 'react-instagram-embed'
+// import InstagramEmbed from 'react-instagram-embed'
 
 
 function getModalStyle() {
@@ -170,10 +170,11 @@ function App() {
         <div className="app__postsLeft">
           {
             posts.map(({ id, post }) => (
-              <Post postId={id} user={user} username={post.username} caption={post.caption} imageUrl={post.imageUrl} />
+              <Post key={id} postId={id} user={user} username={post.username} caption={post.caption} imageUrl={post.imageUrl} />
             ))
           }
         </div>
+       {/*
         <div className="app__postsRight">
           <InstagramEmbed
             url=''
@@ -188,6 +189,7 @@ function App() {
             onFailure={() => { }}
           />
         </div>
+       */} 
       </div>
 
 <div className="app__info">
@@ -195,7 +197,8 @@ function App() {
 {user?.displayName ? (
   <ImageUpload username={user.displayName} />
 ) : (
-    <h3>Please Login to upload here !!!</h3>
+     
+    <h3>Instructions : <br/> 1. When SigningUp for first time, Please Reload the page to Upload the content <br/>2. To Upload as an existing user you must be logged In.  </h3>
   )}
 
 </div>

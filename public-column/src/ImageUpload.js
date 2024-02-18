@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {Button, makeStyles, Modal} from "@material-ui/core";
 import {storage,db} from "./firebase";
 import firebase from "firebase";
@@ -18,7 +18,7 @@ function getModalStyle() {
   const useStyles = makeStyles((theme) => ({
     paper: {
       position: 'absolute',
-      width: 800,
+      width: 300,
       backgroundColor: '#A3EBDF',
       border: '2px solid #000',
       boxShadow: theme.shadows[5],
